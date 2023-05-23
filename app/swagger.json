@@ -1,0 +1,148 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.1",
+    "contact": {
+      "email": "arshiasafikhani@cyberoxi.com"
+    },
+    "title": "Node MOM Project Api doc",
+    "description": "Find out how your APIs work",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3423",
+  "basePath": "/api/",
+  "tags": [
+    {
+      "name": "Doctor",
+      "description": "All doctors Apis"
+    },
+    {
+      "name": "time",
+      "description": "time visit  Apis"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "securityDefinitions": {
+    "ApiKeyAuth":{
+      "type": "apiKey",
+      "in": "header",
+      "name": "x-auth-token"
+
+    }
+  },
+  "paths": {
+    "/doctor/Register": {
+      "post": {
+        "summary": "register Doctor",
+        "tags": [
+          "Doctor"
+        ],
+        "description": "Doctor",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Doctor",
+            "in": "body",
+            "description": "create doctor",
+            "schema": {
+              "$ref": "#/definitions/Doctor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "register Doctor",
+            "schema": {
+              "$ref": "#/definitions/Doctor"
+            }
+          }
+        }
+      }
+    },
+    "/doctor/time": {
+      "get": {
+        "summary": "time visit",
+        "tags": [
+          "time"
+        ],
+        "description": "time",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "time",
+            "in": "query",
+            "description": "create time visit",
+            "schema": {
+              "$ref": "#/definitions/time"
+            }
+          },
+          {
+            "name": "timeOne",
+            "in": "query",
+            "description": "create time visit",
+            "schema": {
+              "$ref": "#/definitions/time"
+            }
+          },
+          {
+            "name": "timeTwo",
+            "in": "query",
+            "description": "create time visit",
+            "schema": {
+              "$ref": "#/definitions/time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "time visit Doctor",
+            "schema": {
+              "$ref": "#/definitions/time"
+            }
+          }
+        }
+      }
+    }
+
+  },
+
+  "definitions": {
+
+    "Doctor": {
+      "properties": {
+
+        "name": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        }
+      }
+    },
+    "time": {
+      "properties": {
+        "time": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

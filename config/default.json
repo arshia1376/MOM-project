@@ -1,0 +1,7 @@
+{
+  "databaseAddress":"development address" ,
+  "jwtPrivateKey": "localhost",
+  "port": "7079",
+  "jwtPrivateKey": "jwtPrivateKey"
+
+}
